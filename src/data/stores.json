@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name":"Tienda",
+        "description":"Description",
+        "estacionamiento": true,
+        "especialidad": ["coffee", "frozen", "breakfasf", "especial", "tea"],
+        "location":"Direccion",
+        "town":"ciudad",
+        "phone":1234567,
+        "img":"img1.jpg"
+    },
+    {
+        "id": 2,
+        "name":"Tienda",
+        "description":"Description",
+        "estacionamiento": true,
+        "especialidad": ["coffee", "frozen", "breakfasf", "especial", "tea"],
+        "location":"Direccion",
+        "town":"ciudad",
+        "phone":1234567,
+        "img":"img1.jpg"
+    },
+    {
+        "id": 3,
+        "name":"Tienda",
+        "description":"Description",
+        "estacionamiento": true,
+        "especialidad": ["coffee", "frozen", "breakfasf", "especial", "tea"],
+        "location":"Direccion",
+        "town":"ciudad",
+        "phone":1234567,
+        "img":"img1.jpg"
+    },
+    {
+        "id": 4,
+        "name":"Tienda",
+        "description":"Description",
+        "estacionamiento": true,
+        "especialidad": ["coffee", "frozen", "breakfasf", "especial", "tea"],
+        "location":"Direccion",
+        "town":"ciudad",
+        "phone":1234567,
+        "img":"img1.jpg"
+    }
+]

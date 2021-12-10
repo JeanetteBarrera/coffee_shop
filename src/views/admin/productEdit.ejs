@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('../admin/head') %>
+<body>
+    <!-- header section starts -->
+    <%- include('../admin/header') %>
+    <!-- header section ends -->
+    <main class="productForm">
+        <h3 class="title">Edit Product</h3>
+        <form action="/admin/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+            <select name="category" id="category">
+                <option value="" selected hidden>Seleccione una categoria</option>
+                <% categories.forEach(category => { %>
+
+                    <option 
+                        <% if (category.id == product.category) { %>
+                         selected
+                        <% } %>
+                        value=<%= category.id %> ><%= category.name %>
+                    </option>
+
+                <% }) %>
+            </select>
+            <span class="error">Error ingrese algo</span>
+
+            <select name="subcategory" id="category">
+                <option value="" selected hidden>Seleccione una subcategoria</option>
+                <% categories[0].subcategories.forEach((subcategory) => { %>
+                    <option 
+                        <% if (subcategory== product.subcategory) { %>
+                         selected
+                        <% } %>
+                        value=<%= subcategory %> ><%= subcategory %>
+                    </option>
+                <% }) %>
+                <!--<option value="premium">Premium</option>
+                <option value="especiales">Especiales</option>
+                <option value="original">Original</option>-->
+            </select>
+            <span class="error">Error ingrese algo</span>
+
+            <p class="title-input">Name product</p>
+            <input type="text" name="name" placeholder="Ingrese el nombre del producto" value="<%= product.name %>">
+            <span class="error">Error ingrese algo</span>
+
+            <p class="title-input">Description</p>
+            <textarea name="description" placeholder="Ingrese la desripcion del producto" id="" cols="30" rows="10"><%= product.description %> </textarea>
+            <span>Error ingrese algo</span>
+
+            <p class="title-input">Price</p>
+            <input type="number" name="price" placeholder="Ingrese el precio del producto"  value="<%= product.price %>">
+            <span class="error">Error ingrese algo</span>
+
+            <p class="title-input">Discount</p>
+            <input type="number" name="discount" placeholder="Ingrese el descuento"  value="<%= product.discount %>">
+            <span class="error">Error ingrese algo</span>
+            <!--<input type="number" name="" placeholder="Ingrese el stock del producto">-->
+            
+            <p class="title-input">Preparation</p>
+            <input type="text" name="preparation" placeholder="Ingrese el nombre del producto"  value="<%= product.preparation %>">
+            <span class="error">Error ingrese algo</span>
+            
+            <div class="container-file">
+                <i class="fas fa-upload"></i>
+                <p>Ingrese una Imagen</p>
+                <input type="file" name="img" id="" value="<%= product.img %>">
+            </div>
+            <span class="error">Error ingrese algo</span>
+            
+            <button type="submit">Guardar</button>
+        </form>
+    </main>
+    <script src="/js/headerAdmin.js"></script>
+</body>
+
+</html>

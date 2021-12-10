@@ -1,0 +1,310 @@
+[
+    {
+        "id": 1,
+        "category": "coffee",
+        "name": "latte pumpkin",
+        "img": "img1.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 2,
+        "category": "coffee",
+        "name": "expresso",
+        "img": "img2.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 3,
+        "category": "coffee",
+        "name": "coffee corte",
+        "img": "img3.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 4,
+        "category": "coffee",
+        "name": "cafe bombom",
+        "img": "img4.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 5,
+        "category": "coffee",
+        "name": "cafe americano",
+        "img": "img5.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 6,
+        "category": "coffee",
+        "name": "capuccino",
+        "img": "img6.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 7,
+        "category": "coffee",
+        "name": "cafe latte",
+        "img": "img7.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 8,
+        "category": "coffee",
+        "name": "iced latte",
+        "img": "img8.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 9,
+        "category": "coffee",
+        "name": "iced coffee",
+        "img": "img9.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 10,
+        "category": "coffee",
+        "name": "latte caramelo",
+        "img": "img10.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 11,
+        "category": "coffee",
+        "name": "latte mocca blanco",
+        "img": "img11.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 12,
+        "category": "coffee",
+        "name": "special latte mocca",
+        "img": "img12.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 13,
+        "category": "frozen",
+        "name": "frozen dunkaccino",
+        "img": "img1.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 14,
+        "category": "frozen",
+        "name": "frozen sandia",
+        "img": "img2.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 15,
+        "category": "frozen",
+        "name": "frozen fantasy",
+        "img": "img3.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 16,
+        "category": "frozen",
+        "name": "maracuya",
+        "img": "img4.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 17,
+        "category": "frozen",
+        "name": "frutas del bosque",
+        "img": "img5.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 18,
+        "category": "frozen",
+        "name": "fresa platano",
+        "img": "img6.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 19,
+        "category": "frozen",
+        "name": "mango",
+        "img": "img7.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 20,
+        "category": "frozen",
+        "name": "smoothie fresa-platano",
+        "img": "img8.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 21,
+        "category": "frozen",
+        "name": "smoothie maracuya",
+        "img": "img9.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 22,
+        "category": "frozen",
+        "name": "smoothie frutas del bosque",
+        "img": "img10.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 23,
+        "category": "frozen",
+        "name": "smoothie mango",
+        "img": "img11.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 24,
+        "category": "frozen",
+        "name": "frozen tiramisu",
+        "img": "img12.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 25,
+        "category": "frozen",
+        "name": "frozen oreo",
+        "img": "img13.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 26,
+        "category": "frozen",
+        "name": "frozen dunkaccino",
+        "img": "img14.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 27,
+        "category": "frozen",
+        "name": "frappe",
+        "img": "img15.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 28,
+        "category": "frozen",
+        "name": "frappe chocolate",
+        "img": "img16.jpg",
+        "lacteo": true
+    },
+    {
+        "id":29,
+        "category": "frozen",
+        "name": "frappe cafe",
+        "img": "img17.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 30,
+        "category": "tea",
+        "name": "iced tea",
+        "img": "img1.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 31,
+        "category": "tea",
+        "name": "iced tea mango",
+        "img": "img2.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 32,
+        "category": "tea",
+        "name": "iced tea sandia",
+        "img": "img3.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 33,
+        "category": "tea",
+        "name": "infusiones",
+        "img": "img4.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 34,
+        "category": "tea",
+        "name": "te matcha",
+        "img": "img1.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 35,
+        "category": "especial",
+        "name": "golden milk",
+        "img": "img2.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 36,
+        "category": "especial",
+        "name": "chai latte",
+        "img": "img3.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 37,
+        "category": "especial",
+        "name": "iced chai",
+        "img": "img4.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 38,
+        "category": "especial",
+        "name": "frappe",
+        "img": "img4.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 39,
+        "category": "breakfast",
+        "name": "tostada de jamon y queso",
+        "img": "img1.jpg",
+        "vegetary": false
+    },
+    {
+        "id": 40,
+        "category": "breakfast",
+        "name": "mollete de aceite y tomate",
+        "img": "img2.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 41,
+        "category": "breakfast",
+        "name": "tostada de mantequilla y mermelada",
+        "img": "img3.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 42,
+        "category": "breakfast",
+        "name": "tostada de aceite y tomate",
+        "img": "img4.jpg",
+        "lacteo": true
+    },
+    {
+        "id": 43,
+        "category": "breakfast",
+        "name": "tostada jamon serrano",
+        "img": "img4.jpg",
+        "lacteo": false
+    },
+    {
+        "id": 44,
+        "category": "breakfast",
+        "name": "croissant jamon y queso",
+        "img": "img4.jpg",
+        "lacteo": false
+    }
+]

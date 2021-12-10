@@ -1,0 +1,192 @@
+.header-admin {
+    background-color: var(--bg);
+    display: flex;
+    min-width: 320px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    z-index: 99999;
+}
+.header-admin .logo img {
+    height: 5rem;
+}
+.header-admin .icons .fa-user {
+    margin-right: 10px;
+}
+.header-admin .icons .fa-user span {
+    margin-left: 10px;
+}
+.header-admin .icons i {
+    color: white;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.header-admin .search-form {
+    display: flex;
+    background: white;
+    align-items: center;
+    width: 40%;
+    padding:.5rem;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+.header-admin .search-form input {
+    width: 100%;
+}
+.header-admin .search-form button {
+    background: none;
+}
+.header-admin .navbar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -100%;
+    top:100%;
+    width: 50%;
+    height: 100vh;
+    padding: 1rem;
+    background-color: var(--main-color)
+}
+.header-admin .navbar.active {
+    right: 0;
+}
+.header-admin .navbar a {
+    margin: .5rem 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1.5rem;
+    text-transform: capitalize;
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+/*FIN DEL HEADER-ADMIN*/
+.panel-admin {
+    margin: 10rem auto;
+    width: 90%;
+    max-width: 1100px;
+}
+.panel-admin h3.title {
+    text-align: center;
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+.panel-admin .options-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.panel-admin .options-info div{
+    width: 30%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: .5rem;
+    align-items: center;
+    box-shadow: 1px 1px 5px black;
+}
+.panel-admin .options-info div h3 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--main-color)
+}
+.panel-admin .options-info div p {
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+/*tabla*/
+.panel-admin .tablas table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+}
+.panel-admin .tablas table thead {
+    background-color: rgb(54, 54, 54);
+}
+.panel-admin .tablas table thead tr th {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 700;
+    padding: 1rem .5rem;
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+}
+.panel-admin .tablas table tbody tr td {
+    background-color: rgb(182, 182, 182) ;
+    text-align: center;
+    padding: .9rem 0;
+    border: 1px solid white;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.panel-admin .tablas table tbody tr {
+    margin-bottom: 15px;
+}
+/*.panel-admin .tablas table tbody tr td {
+    text-align: right;
+    padding-right: 15px;;
+    position: relative;
+}*/
+.panel-admin .tablas table tbody tr form {
+    display: inline-block;
+}
+.panel-admin .tablas table tbody tr form button {
+    background: none;
+}
+.panel-admin .tablas table tbody tr a,
+.panel-admin .tablas table tbody tr .fa-trash-alt {
+    font-size: 1.5rem;
+    color: rgb(233, 231, 231);
+    margin: 0 5px;
+}
+.panel-admin .tablas table tbody tr a:hover,
+.panel-admin .tablas table tbody tr .fa-trash-alt:hover {
+    color: var(--main-color)
+}
+@media(max-width:767px){
+    
+}
+
+@media(max-width: 550px) {
+    .panel-admin .options-info div{
+        width: 90%;
+        margin: 1rem auto;
+    }
+    .panel-admin .tablas{
+        width: 90%;
+        margin: 1rem auto;
+    }
+    .panel-admin .tablas table thead {
+        display: none;
+    }
+    .panel-admin .tablas table,
+    .panel-admin .tablas table tbody,
+    .panel-admin .tablas table tr,
+    .panel-admin .tablas table td{
+        display: block;
+        width: 100%;
+    } 
+    .panel-admin .tablas table tbody tr td {
+    text-align: right;
+    padding-right: 15px;;
+    position: relative;
+    }
+    .panel-admin .tablas table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        text-align: left;
+    }
+}

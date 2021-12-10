@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name": "Cafe en grano",
+        "subcategories":[
+            "especiales",
+            "premium",
+            "original"
+        ]
+    },
+    {
+        "id":2,
+        "name": "Cafe molido",
+        "subcategories":[
+            "especiales",
+            "premium",
+            "original"
+        ]
+    }
+]

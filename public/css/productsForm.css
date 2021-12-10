@@ -1,0 +1,82 @@
+.productForm {
+    margin: 10rem auto;
+    width: 90%;
+    max-width: 900px;
+}
+.productForm h3.title {
+    text-align: center;
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+.productForm form span {
+    color: rgb(235, 140, 140);
+    font-size: 1.2rem;
+    margin: 5px 0;
+    text-transform:lowercase;
+    display: none;
+}
+.productForm form {
+    display: flex;
+    flex-direction: column;
+}
+.productForm form .title-input {
+    margin: 12px 0 5px 0;
+    font-size: 1.4rem;
+}
+.productForm form select,
+.productForm form input {
+    height: 35px;
+    border: solid 1px gray;
+    padding: 7px;
+    border-radius: 5px;
+}
+.productForm form select{
+    margin-top: 12px;
+}
+.productForm form textarea {
+    border: solid 1px gray;
+    padding: 7px;
+    border-radius: 5px;
+}
+.productForm form select:focus,
+.productForm form input:focus,
+.productForm form textarea:focus {
+    outline: solid 3px var(--main-color);
+}
+.productForm form .container-file {
+    width: 80%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px gray;
+    padding: 7px;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    color: var(--main-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.productForm form .container-file i {
+    margin: 0 5px 0 0;
+    font-size: 1.6rem;
+}
+.productForm form .container-file input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.productForm form button {
+    background-color: #171719;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+}
