@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../admin/head') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+
 <body>
     <!-- header section starts -->
-    <%- include('../admin/header') %>
+    <header class="header-admin">
+        <a href="/" class="logo">
+            <img src="/images/Group-42.svg" alt="">
+        </a>
+
+        <form class="search-form">
+            <input type="search" name="search" id="search-box" placeholder="search here...">
+            <button type="submit"><label for="search-box" class="fas fa-search"></label></button>
+        </form>
+
+        <div class="icons">
+            <a href="/"><i class="fas fa-user"><span>Admin</span></i></a>
+            <i class="fas fa-bars" id="menu-btn"></i>
+        </div>
+
+        <nav class="navbar">
+            <a href="/admin">profile</a>
+            <a href="/admin">dashboard</a>
+            <a href="/admin/products">products</a>
+            <a href="/admin/product">new product</a>
+            <a href="/admin">new category</a>
+            <a href="/admin">customers</a>
+        </nav>
+    </header>
     <!-- header section ends -->
     <main class="panel-admin">
         <h3 class="title">Products List</h3>
@@ -22,20 +54,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% products.forEach(product => { %>
-                    
+                    <% products.forEach(product=> { %>
+
                         <tr>
-                            <td data-label="ID"><%= product.id %></td>
-                            <td data-label="CATEGORY"><%= product.category %></td>
-                            <td data-label="SUBCATEGORY"><%= product.subcategory %></td>
-                            <td data-label="NAME"><%= product.name %></td>
-                            <td data-label="STOCK"><%= product.stock %></td>
+                            <td data-label="ID">
+                                <%= product.id %>
+                            </td>
+                            <td data-label="CATEGORY">
+                                <%= product.category %>
+                            </td>
+                            <td data-label="SUBCATEGORY">
+                                <%= product.subcategory %>
+                            </td>
+                            <td data-label="NAME">
+                                <%= product.name %>
+                            </td>
+                            <td data-label="STOCK">
+                                <%= product.stock %>
+                            </td>
                             <td data-label="STATUS">
-                                <% if (product.status == true) { %>
+                                <% if (product.status==true) { %>
                                     Active
-                                <% } else { %>
-                                    Inactive
-                                <% } %> 
+                                    <% } else { %>
+                                        Inactive
+                                        <% } %>
                             </td>
                             <td data-label="ACTION">
                                 <!-- los dos links son mostrar en caso de estar  -->

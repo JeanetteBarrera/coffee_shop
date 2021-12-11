@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../admin/head') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+
 <body>
     <!-- header section starts -->
-    <%- include('../admin/header') %>
+    <header class="header-admin">
+        <a href="/" class="logo">
+            <img src="/images/Group-42.svg" alt="">
+        </a>
+
+        <form class="search-form">
+            <input type="search" name="search" id="search-box" placeholder="search here...">
+            <button type="submit"><label for="search-box" class="fas fa-search"></label></button>
+        </form>
+
+        <div class="icons">
+            <a href="/"><i class="fas fa-user"><span>Admin</span></i></a>
+            <i class="fas fa-bars" id="menu-btn"></i>
+        </div>
+
+        <nav class="navbar">
+            <a href="/admin">profile</a>
+            <a href="/admin">dashboard</a>
+            <a href="/admin/products">products</a>
+            <a href="/admin/product">new product</a>
+            <a href="/admin">new category</a>
+            <a href="/admin">customers</a>
+        </nav>
+    </header>
     <!-- header section ends -->
     <main class="productForm">
         <h3 class="title">Edit Product</h3>
@@ -12,30 +44,28 @@
 
             <select name="category" id="category">
                 <option value="" selected hidden>Seleccione una categoria</option>
-                <% categories.forEach(category => { %>
+                <% categories.forEach(category=> { %>
 
-                    <option 
-                        <% if (category.id == product.category) { %>
-                         selected
+                    <option <% if (category.id==product.category) { %>
+                        selected
                         <% } %>
-                        value=<%= category.id %> ><%= category.name %>
+                            value=<%= category.id %> ><%= category.name %>
                     </option>
 
-                <% }) %>
+                    <% }) %>
             </select>
             <span class="error">Error ingrese algo</span>
 
             <select name="subcategory" id="category">
                 <option value="" selected hidden>Seleccione una subcategoria</option>
-                <% categories[0].subcategories.forEach((subcategory) => { %>
-                    <option 
-                        <% if (subcategory== product.subcategory) { %>
-                         selected
+                <% categories[0].subcategories.forEach((subcategory)=> { %>
+                    <option <% if (subcategory==product.subcategory) { %>
+                        selected
                         <% } %>
-                        value=<%= subcategory %> ><%= subcategory %>
+                            value=<%= subcategory %> ><%= subcategory %>
                     </option>
-                <% }) %>
-                <!--<option value="premium">Premium</option>
+                    <% }) %>
+                        <!--<option value="premium">Premium</option>
                 <option value="especiales">Especiales</option>
                 <option value="original">Original</option>-->
             </select>
@@ -46,29 +76,31 @@
             <span class="error">Error ingrese algo</span>
 
             <p class="title-input">Description</p>
-            <textarea name="description" placeholder="Ingrese la desripcion del producto" id="" cols="30" rows="10"><%= product.description %> </textarea>
+            <textarea name="description" placeholder="Ingrese la desripcion del producto" id="" cols="30"
+                rows="10"><%= product.description %> </textarea>
             <span>Error ingrese algo</span>
 
             <p class="title-input">Price</p>
-            <input type="number" name="price" placeholder="Ingrese el precio del producto"  value="<%= product.price %>">
+            <input type="number" name="price" placeholder="Ingrese el precio del producto" value="<%= product.price %>">
             <span class="error">Error ingrese algo</span>
 
             <p class="title-input">Discount</p>
-            <input type="number" name="discount" placeholder="Ingrese el descuento"  value="<%= product.discount %>">
+            <input type="number" name="discount" placeholder="Ingrese el descuento" value="<%= product.discount %>">
             <span class="error">Error ingrese algo</span>
             <!--<input type="number" name="" placeholder="Ingrese el stock del producto">-->
-            
+
             <p class="title-input">Preparation</p>
-            <input type="text" name="preparation" placeholder="Ingrese el nombre del producto"  value="<%= product.preparation %>">
+            <input type="text" name="preparation" placeholder="Ingrese el nombre del producto"
+                value="<%= product.preparation %>">
             <span class="error">Error ingrese algo</span>
-            
+
             <div class="container-file">
                 <i class="fas fa-upload"></i>
                 <p>Ingrese una Imagen</p>
                 <input type="file" name="img" id="" value="<%= product.img %>">
             </div>
             <span class="error">Error ingrese algo</span>
-            
+
             <button type="submit">Guardar</button>
         </form>
     </main>
