@@ -1,19 +1,21 @@
 const express = require("express");
 const router = express.Router();
-//const upload = require('../middlewares/uploadProductFile');
+const upload = require('../middlewares/uploadProductFile');
 
-//const {index, listProducts, create, addProduct, edit, updateProduct, deleteProduct} = require("../controllers/adminController");
+const {index, listProducts, create, addProduct, edit, updateProduct, deleteProduct} = require("../controllers/adminController");
 
 
-//router.get("/", profile); //devuelve el perfil de administrador
+//router.get("/", profile); //esta petición devuelve la vista del perfil de administrador
+router.get("/", index);
+router.get("/products", listProducts); // esta petición devuelve la vista de listar de todos los productos
 
-//devuelve la lista de todos los productos
+router.get("/product", create); // esta petición devuelve la vista del formulario de carga de productos
+router.post("/product", upload.single('img'), addProduct); //esta petición crea un nuevo producto no devuelve nada
 
-//devuelve el formulario de carga de productos
-//crea un nuevo producto
+router.get("/product/:id", edit); // esta petición devuelve la vista del formulario de edición de productos, requiere un parametro obligatorio
+router.put("/product/:id",upload.single('img'), updateProduct); //actualiza producto no devuelve nada
 
-//actualiza producto
+router.delete("/product/:id", deleteProduct); //elimina producto
 
-//elimina producto
 
 module.exports = router;

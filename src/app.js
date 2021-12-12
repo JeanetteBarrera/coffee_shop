@@ -4,8 +4,6 @@ const path = require('path');
 const app = express(); // asigno a la variable app, express ejecutada
 const PORT = 3000; //declaro una variable que almacenara el nro del puerto
 
-app.use(express.static("public")); //configuración de archivos estaticos
-
 
 /*====== MIDDLEWARES =======*/
 app.use(express.static(path.join(__dirname, '../public')));
@@ -23,7 +21,6 @@ let usersRouter = require("./routes/users");
 let productsRouter = require("./routes/products");
 let storesRouter = require("./routes/stores");
 let adminRouter = require("./routes/admin");
-
 
 /*====== ENRUTADORES =======*/
 app.use("/", indexRouter);
