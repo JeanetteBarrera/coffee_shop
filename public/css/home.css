@@ -49,8 +49,14 @@ body.home {
 .header .icons i {
     color: #ffffff;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-left: 2rem;
+    background-color: #997239;
+    padding: 7px 7px;
+    border-radius: 2px;
+}
+.header .icons i.fa-user {
+    display: none;
 }
 .header .icons i:hover {
     color: var(--main-color);
@@ -93,11 +99,20 @@ body.home {
     position: absolute;
     top:100%;
     right: -100%;
-    height: calc(100vh - 9.5rem);
+    /*height: calc(100vh - 9.5rem);*/
     width: 35rem;
     background: #ffffff;
     padding: 0 1.5rem;
 
+}
+.header .cart-container h3.title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 15px 0 18px 0;
+    padding-bottom: 4px;
+    color: var(--main-color);
+    font-weight: 700;
+    border-bottom: 5px solid var(--main-color);
 }
 .header .cart-container.active {
     right: 0;
@@ -129,8 +144,29 @@ body.home {
     padding-bottom: .5rem;
 }
 .header .cart-container .cart-item .content .price {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: var(--main-color);
+}
+.header .cart-container .cart-puy {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.header .cart-container .cart-puy span {
+    font-size: 1.6rem;
+}
+.header .cart-container .cart-puy a{
+    width: 100%;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background-color: var(--black);
+    color: white;
+    margin: 15px 0 20px 0;
+    border-radius: 4px;
 }
 /* HOME */
 .home {
@@ -251,6 +287,9 @@ body.home {
     .header .icons .fa-bars {
         display: none;
     }
+    .header .icons i.fa-user {
+        display: inline;
+    }
     .header .navbar {
         display: block;
         position: static;
@@ -269,7 +308,6 @@ body.home {
         font-weight: 600;
     }
     .header .search-form {
-        right: 4%;
         width: 60%;
     }
     .home .main_section {
