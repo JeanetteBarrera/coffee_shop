@@ -5,7 +5,7 @@ const upload = require('../middlewares/uploadProductFile');
 const {index, listProducts, create, addProduct, edit, updateProduct, deleteProduct} = require("../controllers/adminController");
 
 
-//router.get("/", profile); //esta petición devuelve la vista del perfil de administrador
+//esta petición devuelve la vista del panel del administrador
 router.get("/", index);
 router.get("/products", listProducts); // esta petición devuelve la vista de listar de todos los productos
 

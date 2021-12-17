@@ -17,9 +17,7 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 
 /*====== REQUIERO ROUTERS =======*/
 let indexRouter = require("./routes/main");
-let usersRouter = require("./routes/users");
 let productsRouter = require("./routes/products");
-let storesRouter = require("./routes/stores");
 let adminRouter = require("./routes/admin");
 
 /*====== ENRUTADORES =======*/
@@ -28,7 +26,6 @@ app.use("/", indexRouter);
 app.use("/products", productsRouter);
 //app.use("/store", storesRouter);
 app.use("/admin", adminRouter);
-
 
 app.listen(PORT, () => {
     console.log(`Servidor levantado en el puerto ${PORT}`)

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path');
+/*const path = require('path');*/
 
 const { productsExtra,categories, writeProductsExtraJson} = require("../data/data");// requiero las propiedades y metodos.
 

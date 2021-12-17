@@ -70,6 +70,10 @@
     width: 90%;
     max-width: 1100px;
 }
+.panel-admin h1 {
+    color: #997239;
+    font-size: 2.6rem;
+}
 .panel-admin h3.title {
     text-align: center;
     font-size: 2rem;
@@ -94,12 +98,11 @@
     box-shadow: 1px 1px 5px black;
 }
 .panel-admin .options-info div h3 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-weight: 900;
-    color: var(--main-color)
+    color: #997239
 }
 .panel-admin .options-info div p {
-    text-transform: capitalize;
     font-weight: 900;
     font-size: 1.2rem;
 }
@@ -122,10 +125,10 @@
     border: 1px solid white;
 }
 .panel-admin .tablas table tbody tr td {
-    background-color: rgb(182, 182, 182) ;
+    /*background-color: rgb(182, 182, 182) ;*/
     text-align: center;
     padding: .9rem 0;
-    border: 1px solid white;
+    border: 1px solid rgb(199, 195, 195);
     text-transform: capitalize;
     font-weight: 500;
 }
@@ -146,7 +149,7 @@
 .panel-admin .tablas table tbody tr a,
 .panel-admin .tablas table tbody tr .fa-trash-alt {
     font-size: 1.5rem;
-    color: rgb(233, 231, 231);
+    color: rgb(199, 195, 195);
     margin: 0 5px;
 }
 .panel-admin .tablas table tbody tr a:hover,
