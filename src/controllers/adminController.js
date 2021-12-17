@@ -35,11 +35,11 @@ let controller = {
         let newProduct = {
             id: lastId + 1,
             name: name.trim(),
-            category: category.trim(), 
-            subcategory: subcategory.trim(),
+            category: category, 
+            subcategory: subcategory,
             description: description.trim(),
-            price: price.trim(),
-            discount: discount.trim(),
+            price: price,
+            discount: discount,
             status: true,
             stock: 20,
             img: req.file ? req.file.filename : "default-image.jpg",
@@ -51,14 +51,14 @@ let controller = {
     }, 
     edit: (req, res) => {
 
-        let productId = +req.params.id;
-        let product = productsExtra.find(product => product.id === productId );
+        let product = productsExtra.find(product => product.id === +req.params.id)
 
         res.render("admin/productEdit", {
-            product,
             categories,
+            product,
             title : "Edit Product"
-        });
+        })
+        
     },
     updateProduct:  (req, res) => {
         
@@ -69,11 +69,11 @@ let controller = {
             if(product.id === productId) {
                 product.id = product.id,
                 product.name = name.trim(),
-                product.category = category.trim(),
-                product.subcategory = subcategory.trim(),
+                product.category = category,
+                product.subcategory = subcategory,
                 product.description = description.trim(),
-                product.price = price.trim(),
-                product.discount = discount.trim(),
+                product.price = price,
+                product.discount = discount,
                 product.stock = product.stock,
                 product.status = product.status
                 if(req.file){

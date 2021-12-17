@@ -8,24 +8,18 @@
     <!-- header section ends -->
     <main class="productForm">
         <h3 class="title">Edit Product</h3>
-        <form action="/admin/product/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-
+        <form action="" method="POST" enctype="multipart/form-data">
             <select name="category" id="category">
                 <option value="" selected hidden>Seleccione una categoria</option>
                 <% categories.forEach(category => { %>
-
                     <option 
-                        <% if (category.id == product.category) { %>
-                         selected
-                        <% } %>
-                        value=<%= category.id %> ><%= category.name %>
+                        value=<%= category.id %> <%- category.id === +product.category ? "selected" : "" %> ><%- category.name %>
                     </option>
-
                 <% }) %>
             </select>
             <span class="error">Error ingrese algo</span>
 
-            <select name="subcategory" id="category">
+            <select name="subcategory" id="ctegory">
                 <option value="" selected hidden>Seleccione una subcategoria</option>
                 <% categories[0].subcategories.forEach((subcategory) => { %>
                     <option 
