@@ -1,1 +1,67 @@
-[{"id":1,"name":"Cafe antioquia grano","category":1,"subcategory":"premium","description":"Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.","price":200,"discount":10,"stock":30,"status":true,"img":"img1.jpg","preparation":"Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."},{"id":2,"name":"Cafe antioquia grano","category":2,"subcategory":"premium","description":"Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.","price":200,"discount":10,"stock":50,"status":true,"img":"img1.jpg","preparation":"Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."},{"id":3,"name":"Cafe antioquia grano","category":1,"subcategory":"premium","description":"Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.","price":200,"discount":10,"stock":30,"status":false,"img":"img1.jpg","preparation":"Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."},{"id":4,"name":"Cafe antioquia grano","category":2,"subcategory":"premium","description":"Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.","price":200,"discount":10,"stock":50,"status":false,"img":"img1.jpg","preparation":"Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."}]
+[
+    {
+        "id": 1,
+        "name": "Cafe antioquia grano",
+        "category": 1,
+        "subcategory": "premium",
+        "description": "Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.",
+        "price": 200,
+        "discount": 10,
+        "stock": 30,
+        "status": true,
+        "img": "img1.jpg",
+        "preparation": "Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."
+    },
+    {
+        "id": 2,
+        "name": "Cafe antioquia grano",
+        "category": 2,
+        "subcategory": "premium",
+        "description": "Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.",
+        "price": 200,
+        "discount": 10,
+        "stock": 50,
+        "status": true,
+        "img": "img1.jpg",
+        "preparation": "Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."
+    },
+    {
+        "id": 3,
+        "name": "Cafe antioquia grano",
+        "category": 1,
+        "subcategory": "premium",
+        "description": "Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.",
+        "price": 200,
+        "discount": 10,
+        "stock": 30,
+        "status": false,
+        "img": "img1.jpg",
+        "preparation": "Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."
+    },
+    {
+        "id": 4,
+        "name": "Cafe antioquia grano",
+        "category": 2,
+        "subcategory": "premium",
+        "description": "Cultivado y cosechado por las manos de mujeres cafeteras, este café tiene un perfil balanceado con notas de sabor a Mora y Dulce Caramelo.",
+        "price": 200,
+        "discount": 10,
+        "stock": 50,
+        "status": false,
+        "img": "img1.jpg",
+        "preparation": "Para preparar un buen café espresso, utilizar la medida justa de café para cada pocillo (6 a 7 gr)."
+    },
+    {
+        "id": 5,
+        "name": "lalalal",
+        "category": "1",
+        "subcategory": "especiales",
+        "description": "ksksksk",
+        "price": "2222",
+        "discount": "222",
+        "status": true,
+        "stock": 20,
+        "img": "1639716764516_img_.svg",
+        "preparation": "asdsd"
+    }
+]
