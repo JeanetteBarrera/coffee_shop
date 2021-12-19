@@ -106,17 +106,18 @@
     font-weight: 900;
     font-size: 1.2rem;
 }
-/*tabla*/
+/*---------   TABLE   ----------*/
 .panel-admin .tablas table {
     border-collapse: collapse;
     width: 100%;
     margin: 0 auto;
+    color: white;
 }
 .panel-admin .tablas table thead {
     background-color: rgb(54, 54, 54);
 }
 .panel-admin .tablas table thead tr th {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
     font-weight: 700;
     padding: 1rem .5rem;
@@ -127,13 +128,46 @@
 .panel-admin .tablas table tbody tr td {
     /*background-color: rgb(182, 182, 182) ;*/
     text-align: center;
-    padding: .9rem 0;
-    border: 1px solid rgb(199, 195, 195);
+    padding: .9rem 0 ;
+    /*border: 1px solid rgb(199, 195, 195);*/
     text-transform: capitalize;
     font-weight: 500;
 }
+.panel-admin .tablas table tbody tr td.pl-md {
+    text-align: left;
+    padding-left: 1.3rem;
+}
+.panel-admin .tablas table tbody tr td span.available::after {
+    content: 'Available';
+    color: var(--status-available)
+}
+.panel-admin .tablas table tbody tr td span.not-available::after {
+    content: 'Not available';
+    color: var(--status-not-available)
+}
+.panel-admin .tablas table tbody tr td span.available::before,
+.panel-admin .tablas table tbody tr td span.not-available::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.panel-admin .tablas table tbody tr td span.available::before {
+    background-color: var(--status-available)
+}
+.panel-admin .tablas table tbody tr td span.not-available::before {
+    background-color: var(--status-not-available)
+}
 .panel-admin .tablas table tbody tr {
     margin-bottom: 15px;
+    background-color: #585858;
+}
+.panel-admin .tablas table tbody tr:nth-child(even) {
+    margin-bottom: 15px;
+    background-color: rgb(54, 54, 54);
 }
 /*.panel-admin .tablas table tbody tr td {
     text-align: right;
@@ -147,20 +181,25 @@
     background: none;
 }
 .panel-admin .tablas table tbody tr a,
-.panel-admin .tablas table tbody tr .fa-trash-alt {
+.panel-admin .tablas table tbody tr .fa-trash-alt,
+.panel-admin .tablas table tbody tr .fa-eye,
+.panel-admin .tablas table tbody tr .fa-eye-slash
+ {
     font-size: 1.5rem;
     color: rgb(199, 195, 195);
     margin: 0 5px;
 }
 .panel-admin .tablas table tbody tr a:hover,
-.panel-admin .tablas table tbody tr .fa-trash-alt:hover {
+.panel-admin .tablas table tbody tr .fa-trash-alt:hover,
+.panel-admin .tablas table tbody tr .fa-eye:hover,
+.panel-admin .tablas table tbody tr .fa-eye-slash:hover {
     color: var(--main-color)
 }
 @media(max-width:767px){
     
 }
 
-@media(max-width: 550px) {
+@media(max-width: 600px) {
     .panel-admin .options-info div{
         width: 90%;
         margin: 1rem auto;
@@ -168,6 +207,9 @@
     .panel-admin .tablas{
         width: 90%;
         margin: 1rem auto;
+    }
+    .panel-admin .tablas table thead tr th {
+        font-size: 1rem;
     }
     .panel-admin .tablas table thead {
         display: none;
@@ -179,10 +221,12 @@
         display: block;
         width: 100%;
     } 
-    .panel-admin .tablas table tbody tr td {
+    .panel-admin .tablas table tbody tr td,
+    .panel-admin .tablas table tbody tr td.pl-md  {
     text-align: right;
     padding-right: 15px;;
     position: relative;
+    border: 1px solid rgb(199, 195, 195);
     }
     .panel-admin .tablas table td::before {
         content: attr(data-label);

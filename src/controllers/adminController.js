@@ -1,7 +1,7 @@
 const fs = require('fs');
 /*const path = require('path');*/
 
-const { productsExtra,categories, writeProductsExtraJson} = require("../data/data");// requiero las propiedades y metodos.
+const { productsExtra,categories, writeProductsExtraJson, products} = require("../data/data");// requiero las propiedades y metodos.
 
 let controller = {
 
@@ -111,6 +111,21 @@ let controller = {
 
 		writeProductsExtraJson(productsExtra)
 		res.redirect('/admin/products');
-	}
+	},
+    status : (req, res) => {
+        
+        productsExtra.forEach(product => {
+            if(product.id === +req.params.id) {
+                if(product.status === true) {
+                    product.status = false;
+                } else {
+                    product.status = true;
+                }
+            }
+        })
+        writeProductsExtraJson(productsExtra);
+        res.redirect(`/admin/products`);
+    }
+
 }
 module.exports= controller;

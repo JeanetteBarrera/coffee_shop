@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const upload = require('../middlewares/uploadProductFile');
 
-const {index, listProducts, create, addProduct, edit, updateProduct, deleteProduct} = require("../controllers/adminController");
+const {index, listProducts, create, addProduct, edit, updateProduct, deleteProduct, status} = require("../controllers/adminController");
 
 
 //esta petición devuelve la vista del panel del administrador
@@ -17,5 +17,5 @@ router.put("/product/:id",upload.single('img'), updateProduct); //actualiza prod
 
 router.delete("/product/:id", deleteProduct); //elimina producto
 
-
+router.patch("/product/:id", status); //modifica el estatus del producto
 module.exports = router;

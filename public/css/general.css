@@ -23,3 +23,6 @@ html::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 5rem;
 }
+.text-center {
+    text-align: center;
+}
