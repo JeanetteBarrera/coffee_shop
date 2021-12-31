@@ -1,6 +1,10 @@
 const express = require("express"); //requiero express
 const methodOverride = require('method-override');
 const path = require('path');
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const cookieSession = require("./middlewares/cookieSession");
+const localCheck = require("./middlewares/localCheck");
 const app = express(); // asigno a la variable app, express ejecutada
 const PORT = 3000; //declaro una variable que almacenara el nro del puerto
 
@@ -10,6 +14,14 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(session({
+    secret: "coffee shop",
+    resave: false,
+    saveUninitialized: true
+}))
+app.use(cookieParser());
+app.use(cookieSession);
+app.use(localCheck);
 
 /*====== CONFIG. TEMPLATE ENGINE =======*/
 app.set('view engine', 'ejs');
@@ -19,13 +31,19 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 let indexRouter = require("./routes/main");
 let productsRouter = require("./routes/products");
 let adminRouter = require("./routes/admin");
+let usersRouter = require("./routes/users");
 
 /*====== ENRUTADORES =======*/
 app.use("/", indexRouter);
-//app.use("/users", usersRouter);
+app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 //app.use("/store", storesRouter);
 app.use("/admin", adminRouter);
+
+/* ERROR 404 */
+app.use((req, res, next) => {
+    res.status(404).render('404-page')
+})
 
 app.listen(PORT, () => {
     console.log(`Servidor levantado en el puerto ${PORT}`)

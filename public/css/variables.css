@@ -5,4 +5,5 @@
     --border: .1rem solid rgba(255,255,255,.3);
     --status-available: greenyellow;
     --status-not-available: lightsalmon;
+    --title-main: 2rem;
 }

@@ -25,7 +25,12 @@
             <a href="#menu">menu</a>
             <a href="#products">products</a>
             <a href="#contact">contact</a>
-            <a class="mobile-login" href="/">Mi cuenta</a>
+            <% if (typeof locals.user != "undefined") { %>
+                <%= locals.user.name %> 
+            <% } else {%>
+                <a class="mobile-login" href="/">Mi cuenta</a>
+            <% } %>
+            
         </nav>
 
         <div class="icons">

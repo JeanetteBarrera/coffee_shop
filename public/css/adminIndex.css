@@ -37,6 +37,7 @@
 }
 .header-admin .search-form input {
     width: 100%;
+    height: 100%;
 }
 .header-admin .search-form button {
     background: none;
