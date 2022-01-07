@@ -23,27 +23,33 @@
     width: 90%;
     margin: 1rem auto;
 }
-.userForm .form-container div label{
+.userForm .form-container div label,
+.profile .form_container div label
+{
     color: #997239;
     font-weight: 500;
     font-size: 1.2rem;
     text-transform: capitalize;
 }
-.userForm .form-container div input {
+.userForm .form-container div input,
+.profile .form_container div input {
     width: 100%;
     height: 3.4rem;
     margin-top: .5rem;
     border: solid 1px gray;
     border-radius: 3px;
 }
-.userForm .form-container div input:focus {
+.userForm .form-container div input:focus,
+.profile .form_container div input:focus {
     outline: solid 3px #997239;
     
 }
-.userForm .form-container div input {
+.userForm .form-container div input,
+.profile .form_container div input {
     padding-left: 1.5rem;
 }
-.userForm .form-container button {
+.userForm .form-container button,
+.profile .form_container button {
     width: 100px;
     display: block;
     margin: 0 auto;

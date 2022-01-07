@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {register, login, processRegister, processLogin, profile, editProfile, logout} = require("../controllers/userControllers")
-
+/* Middlewares */
 const uploadAvatar = require("../middlewares/uploadAvatarFile")
 /* Validaciones*/
 const loginValidator = require("../validations/loginValidator")
@@ -14,8 +14,8 @@ router.get("/login", login);
 router.post("/login", loginValidator, processLogin)
 
 router.get("/logout", logout);
-router.get("/profile", profile);
 
-router.put("/profile/:id",/* uploadAvatar.single(),*/ editProfile);
+router.get("/profile", profile);
+router.put("/profile/:id", uploadAvatar.single("avatar"), editProfile);
 
 module.exports = router;

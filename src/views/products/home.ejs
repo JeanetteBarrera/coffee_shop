@@ -26,7 +26,7 @@
             <a href="#products">products</a>
             <a href="#contact">contact</a>
             <% if (typeof locals.user != "undefined") { %>
-                <%= locals.user.name %> 
+                <a><%= locals.user.name %> </a>
             <% } else {%>
                 <a class="mobile-login" href="/">Mi cuenta</a>
             <% } %>

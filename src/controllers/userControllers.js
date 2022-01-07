@@ -1,6 +1,7 @@
 const {users, writeUsersJson } = require("../data/data");
 const {validationResult} = require("express-validator");
 const bcrypt = require("bcryptjs");
+const fs = require("fs")
 
 let controller = {
 
@@ -34,7 +35,7 @@ let controller = {
                 phone: "",
                 address: "",
                 zipCode: "",
-                avatar: "image-avatar-default"
+                avatar: req.file ? req.file.filename : "user_avatar_default.jpg",
             }
             users.push(user);
 
@@ -48,7 +49,9 @@ let controller = {
         }
     },
     login: (req, res) => {
-        res.render("users/login");
+        res.render("users/login", {
+            title:"Login - COFFEE SHOP"
+        });
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
@@ -73,9 +76,9 @@ let controller = {
                 })
             }
  
-            //res.locals.user = req.session.user;
- 
-             res.redirect('/')
+            res.locals.user = req.session.user;
+            console.log(res.locals.user)
+            res.redirect('/')
             
         } else{
             res.render("users/login", {
@@ -86,16 +89,55 @@ let controller = {
     },
     profile: (req, res) => {
         if(req.session.user) {
-            let user = users.find(user => user.id === req.session.user.id )
+            let user = users.find(user => user.id === +req.session.user.id )
             res.render("users/profile", {
-                user: user
+                user: user,
+                title:"Profile - COFFEE SHOP"
             })
         } else{
             return(res.redirect("/"))
         }
     },
     editProfile: (req, res) => {
+        let errors = validationResult(req);
 
+        if(errors.isEmpty()) {
+
+            const {name, lastname, email, city, phone, address, zipCode } = req.body;
+
+            
+            users.forEach(user =>{  
+                if(user.id === +req.params.id ) {
+                
+                    user.id = user.id,
+                    user.name = name.trim(),
+                    user.lastname = lastname.trim(),
+                    user.email = email.trim(),
+                    user.password = user.password,
+                    user.rol = user.rol,
+                    user.city = city.trim(),
+                    user.phone = phone,
+                    user.address = address.trim(),
+                    user.zipCode = zipCode
+                    if(req.file){
+                        if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != "user_avatar_default.jpg")){  
+                            fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
+                        }
+                        user.avatar = req.file.filename
+                    }else{
+                        user.avatar = user.avatar
+                    }
+                }
+            })
+            writeUsersJson(users);
+            res.redirect("/users/profile")
+        } else {
+            res.render("/users/profile", {
+                errors: errors.mapped()
+                /*old: req.body*/
+            })
+        }
+    
     },
     logout: (req, res) => {
         req.session.destroy();

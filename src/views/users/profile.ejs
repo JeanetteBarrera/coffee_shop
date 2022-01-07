@@ -77,32 +77,97 @@
     <!-- header section ends -->
 
     <!-- home section stars -->
-    <main class="userForm" id="userForms">
-        <form class="form-container" action="/users/register" method="POST">
-            <h3>Register</h3>
-            <div>
-                <label for="name">name</label>
-                <input type="text" name="name" placeholder="name" id="name" value="<%= locals.old && old.name %>">
-                <% if (typeof errors != "undefined" && errors.name) { %>
-                    <span class="text-danger"><%= errors.name.msg %> </span>
-                <% } %>
+    <main class="profile" id="userForms">
+        <form class="form_container" action="/users/profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <h3>
+                Welcome
+            </h3>
+            <div class="container_img">
+
+                <img src="/images/avatars/<%= user.avatar %>" alt="">
+
+                <div class="avatar_edit">
+                    <input name="avatar" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                    <label for="imageUpload" class="fas fa-pencil-alt"></label>
+                </div>
             </div>
-            <div>
-                <label for="lastname">lastname</label>
-                <input type="text" name="lastname" placeholder="lastname" id="lastname" value="<%= locals.old && old.lastname %>">
-                <% if (typeof errors != "undefined" && errors.lastname) { %>
-                    <span class="text-danger"><%= errors.lastname.msg %> </span>
-                <% } %>
+            <div class="box_1">
+                <div>
+                    <label for="name">name</label>
+                    <input type="text" name="name" placeholder="name" id="name" value="<%= user.name %>">
+                    <% if (typeof errors !="undefined" && errors.name) { %>
+                        <span class="text-danger">
+                            <%= errors.name.msg %>
+                        </span>
+                        <% } %>
+                </div>
+                <div>
+                    <label for="lastname">lastname</label>
+                    <input type="text" name="lastname" placeholder="lastname" id="lastname"
+                        value="<%= user.lastname%>">
+                    <% if (typeof errors !="undefined" && errors.lastname) { %>
+                        <span class="text-danger">
+                            <%= errors.lastname.msg %>
+                        </span>
+                        <% } %>
+                </div>
+                <div class="extra_info">
+                    <a href="/">mis favoritos</a>
+                    <a href="/">mis compras</a>
+                </div>
+
             </div>
             <div>
                 <label for="email">email</label>
-                <input type="email" name="email" placeholder="email" id="email" value="<%= locals.old && old.email %>">
-                <% if (typeof errors != "undefined" && errors.email) { %>
-                    <span class="text-danger"><%= errors.email.msg %> </span>
-                <% } %>
+                <input type="email" name="email" placeholder="email" id="email" value="<%= user.email%>">
+                <% if (typeof errors !="undefined" && errors.email) { %>
+                    <span class="text-danger">
+                        <%= errors.email.msg %>
+                    </span>
+                    <% } %>
+            </div>
+            <div>
+                <label>password</label>
+                <input type="password" name="password" value="<%= user.password %>" disabled>
+            </div>
+            <div>
+                <label for="city">city</label>
+                <input type="text" name="city" placeholder="city" id="city" value="<%= user.city%>">
+                <% if (typeof errors !="undefined" && errors.city) { %>
+                    <span class="text-danger">
+                        <%= errors.city.msg %>
+                    </span>
+                    <% } %>
+            </div>
+            <div>
+                <label for="phone">phone</label>
+                <input type="number" name="phone" placeholder="phone" id="phone" value="<%= user.phone%>">
+                <% if (typeof errors !="undefined" && errors.phone) { %>
+                    <span class="text-danger">
+                        <%= errors.phone.msg %>
+                    </span>
+                    <% } %>
+            </div>
+            <div>
+                <label for="zipCode">zipCode</label>
+                <input type="number" name="zipCode" placeholder="zipCode" id="zipCode" value="<%= user.zipCode %>">
+                <% if (typeof errors !="undefined" && errors.zipCode) { %>
+                    <span class="text-danger">
+                        <%= errors.zipCode.msg %>
+                    </span>
+                    <% } %>
+            </div>
+            <div>
+                <label for="address">address</label>
+                <input type="text" name="address" placeholder="address" id="address" value="<%= user.address %>">
+                <% if (typeof errors !="undefined" && errors.address) { %>
+                    <span class="text-danger">
+                        <%= errors.address.msg %>
+                    </span>
+                    <% } %>
             </div>
 
-            <button type="submit">register</button>
+            <button type="submit">save</button>
         </form>
 
     </main>

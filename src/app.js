@@ -1,10 +1,10 @@
 const express = require("express"); //requiero express
 const methodOverride = require('method-override');
 const path = require('path');
-const session = require("express-session");
+const session = require('express-session');
 const cookieParser = require("cookie-parser");
 const cookieSession = require("./middlewares/cookieSession");
-const localCheck = require("./middlewares/localCheck");
+//const localCheck = require("./middlewares/localCheck");
 const app = express(); // asigno a la variable app, express ejecutada
 const PORT = 3000; //declaro una variable que almacenara el nro del puerto
 
@@ -15,13 +15,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: "coffee shop",
+    secret: "coffeeShop",
     resave: false,
     saveUninitialized: true
 }))
 app.use(cookieParser());
 app.use(cookieSession);
-app.use(localCheck);
+//app.use(localCheck);
 
 /*====== CONFIG. TEMPLATE ENGINE =======*/
 app.set('view engine', 'ejs');
