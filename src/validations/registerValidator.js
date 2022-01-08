@@ -30,6 +30,7 @@ module.exports = [
     .isLength(8)
     .withMessage("8 characters must be entered"),
 
+
     body("password2").custom( (value, {req}) => value !== req.body.password ? false : true)
     .withMessage("password do not match")
 

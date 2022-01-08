@@ -42,6 +42,7 @@ let controller = {
             writeUsersJson(users);
             res.redirect("/users/login")
         } else {
+            console.log(errors)
             res.render("users/register", {
                 errors: errors.mapped(),
                 old: req.body
@@ -81,6 +82,7 @@ let controller = {
             res.redirect('/')
             
         } else{
+            console.log(errors)
             res.render("users/login", {
                 errors: errors.mapped(),
                 old: req.body
