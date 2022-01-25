@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const cookieSession = require("./middlewares/cookieSession");
 //const localCheck = require("./middlewares/localCheck");
 const app = express(); // asigno a la variable app, express ejecutada
-const PORT = 3000; //declaro una variable que almacenara el nro del puerto
+const PORT = 3030; //declaro una variable que almacenara el nro del puerto
 
 
 /*====== MIDDLEWARES =======*/
@@ -22,6 +22,10 @@ app.use(session({
 app.use(cookieParser());
 app.use(cookieSession);
 //app.use(localCheck);
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next()
+})
 
 /*====== CONFIG. TEMPLATE ENGINE =======*/
 app.set('view engine', 'ejs');

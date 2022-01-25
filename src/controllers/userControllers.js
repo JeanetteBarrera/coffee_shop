@@ -7,7 +7,8 @@ let controller = {
 
     register: (req, res) => {
         res.render("users/register",{
-            title:"Register - COFFEE SHOP"
+            title:"Register - COFFEE SHOP",
+            session: req.session
         });
     },
     processRegister: (req, res) => {
@@ -35,7 +36,7 @@ let controller = {
                 phone: "",
                 address: "",
                 zipCode: "",
-                avatar: req.file ? req.file.filename : "user_avatar_default.jpg",
+                avatar: req.file ? req.file.filename : "img_user_default.jpg",
             }
             users.push(user);
 
@@ -45,13 +46,15 @@ let controller = {
             console.log(errors)
             res.render("users/register", {
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
     },
     login: (req, res) => {
         res.render("users/login", {
-            title:"Login - COFFEE SHOP"
+            title:"Login - COFFEE SHOP",
+            session: req.session
         });
     },
     processLogin: (req, res) => {
@@ -82,10 +85,20 @@ let controller = {
             res.redirect('/')
             
         } else{
-            console.log(errors)
+            //console.log(errors)
+            errors = errors.mapped()
+            if (req.fileValidationError) {
+                errors = {
+                    ...errors,
+                    image: {
+                        msg: req.fileValidationError,
+                    },
+                };
+            }
             res.render("users/login", {
-                errors: errors.mapped(),
-                old: req.body
+                errors,
+                old: req.body,
+                session: req.session
             })
         }
     },
@@ -94,7 +107,8 @@ let controller = {
             let user = users.find(user => user.id === +req.session.user.id )
             res.render("users/profile", {
                 user: user,
-                title:"Profile - COFFEE SHOP"
+                title:"Profile - COFFEE SHOP",
+                session: req.session
             })
         } else{
             return(res.redirect("/"))
@@ -105,7 +119,7 @@ let controller = {
 
         if(errors.isEmpty()) {
 
-            const {name, lastname, email, city, phone, address, zipCode } = req.body;
+            const {name, lastname, city, phone, address, zipCode } = req.body;
 
             
             users.forEach(user =>{  
@@ -114,15 +128,13 @@ let controller = {
                     user.id = user.id,
                     user.name = name.trim(),
                     user.lastname = lastname.trim(),
-                    user.email = email.trim(),
-                    user.password = user.password,
                     user.rol = user.rol,
                     user.city = city.trim(),
                     user.phone = phone,
                     user.address = address.trim(),
                     user.zipCode = zipCode
                     if(req.file){
-                        if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != "user_avatar_default.jpg")){  
+                        if(fs.existsSync("./public/images/avatars/", user.avatar) && (user.avatar != "img_user_default.jpg")){  
                             fs.unlinkSync(`./public/images/avatars/${user.avatar}`)
                         }
                         user.avatar = req.file.filename
@@ -135,7 +147,8 @@ let controller = {
             res.redirect("/users/profile")
         } else {
             res.render("/users/profile", {
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                session: req.session
                 /*old: req.body*/
             })
         }

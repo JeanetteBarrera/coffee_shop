@@ -21,7 +21,7 @@ module.exports = [
             return false;
         } else {
             return true;
-        }password
+        }
     }).withMessage("email is already registered"),
 
     check("password")

@@ -1,0 +1,93 @@
+<!-- header section starts -->
+<header class="header">
+    <a href="/" class="logo">
+        <img src="/images/Group-42.svg" alt="">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#menu">menu</a>
+        <a href="#products">products</a>
+        <a href="#contact">contact</a>
+        <% if (typeof session.user != "undefined") { %>
+            <a><%= session.user.name %></a>
+        <% } else {%>
+            <a class="mobile-login" href="/">login</a>
+        <% } %>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-shopping-cart" id="cart-btn"></i>
+        <i class="fas fa-user" id="user-btn"></i>
+        <i class="fas fa-bars" id="menu-btn"></i>
+    </div>
+
+    <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </div>
+
+    <div class="cart-container">
+        <% if (typeof session.user != "undefined") { %>
+            <h3 class="title">Your products</h3>
+
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="/images/pexels-juan-pablo-serrano-arenas-894695.jpg" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="/images/pexels-juan-pablo-serrano-arenas-894695.jpg" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="/images/pexels-juan-pablo-serrano-arenas-894695.jpg" alt="">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">$15.99/-</div>
+                </div>
+            </div>
+            <div class="cart-puy">
+                <span>Subtotal:</span>
+                <span>$5000</span>
+                <a class="" href="/">Purchase</a>
+            </div>
+        <% } else {%>
+            <div class="cart-item">
+                <h3>You must log in</h3>
+            </div>
+        <% } %>
+    </div>
+    <div class="user-data">
+        <% if (typeof session.user != "undefined") { %>
+            <span class="x"></span>
+            <div class="box_1">
+                <figure>
+                    <img src="/images/avatars/<%= session.user.avatar %>" alt="Imagen de Usuario">
+                </figure>
+                <h3 class="title"><%= session.user.name %></h3>
+            </div>
+            <div class="box-2-links">
+                <a href="/users/profile">profile</a>
+                <a href="/">favorites</a>
+                <a href="/users/logout">sign out</a>
+            </div>
+        <% } else { %>
+        <div class="box-2-links">
+            <a href="/users/login">log in</a>
+            <a href="/users/register">sign in</a>
+        </div>
+        <% } %>
+    </div>
+</header>
+<!-- header section ends -->

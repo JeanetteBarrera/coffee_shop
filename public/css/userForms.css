@@ -32,12 +32,16 @@
     text-transform: capitalize;
 }
 .userForm .form-container div input,
-.profile .form_container div input {
+.profile .form_container div input{
     width: 100%;
     height: 3.4rem;
     margin-top: .5rem;
     border: solid 1px gray;
     border-radius: 3px;
+}
+.profile .form_container div .email {
+    line-height: 3.4rem;
+    font-size: 1.2rem;
 }
 .userForm .form-container div input:focus,
 .profile .form_container div input:focus {

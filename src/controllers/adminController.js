@@ -8,21 +8,25 @@ let controller = {
     index:(req, res) => {
         res.render("admin/indexAdmin", {
             products: productsExtra,
-            title: "Admin"
+            title:"Admin - COFFEE SHOP",
+            session: req.session
         });
     },
     listProducts: (req, res) => {
         res.render("admin/productList", {
             products: productsExtra,
-            title: "List products"
+            title:"List - COFFEE SHOP",
+            session: req.session
         });
     }, 
     create: (req, res) => {
         res.render("admin/productCreate",{
-            title: "Create Product"
+            title:"Create Product - COFFEE SHOP",
+            session: req.session
         });
     }, 
     addProduct: (req, res) => {
+        
         const { name, category, subcategory, description, price, discount, preparation} = req.body;
         //definimos id, recorremos todo en array de objetos para capturar el ultimo id creado
         let lastId = 1;
@@ -56,7 +60,8 @@ let controller = {
         res.render("admin/productEdit", {
             categories,
             product,
-            title : "Edit Product"
+            title : "Edit Product",
+            session: req.session
         })
         
     },
@@ -77,7 +82,7 @@ let controller = {
                 product.stock = product.stock,
                 product.status = product.status
                 if(req.file){
-					if(fs.existsSync("./public/images/products/", product.img)){  
+					if(fs.existsSync("./public/images/products/", product.img) && (product.img != "default-image.jpg")){  
 						fs.unlinkSync(`./public/images/products/${product.img}`)
 					}
 					product.img = req.file.filename
@@ -98,7 +103,7 @@ let controller = {
 
 			if(product.id === productId){
 
-                if(fs.existsSync("./public/images/products/", product.img)){ 
+                if(fs.existsSync("./public/images/products/", product.img) && (product.img != "default-image.jpg")){ 
                     fs.unlinkSync(`./public/images/products/${product.img}`)
 				}
                 let productDeleteIndex = productsExtra.indexOf(product)
